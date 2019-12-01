@@ -1,0 +1,7 @@
+LET map = REC map f ->
+    FUN seznam ->
+        MATCH seznam WITH 
+            | [] -> []
+            | x :: xs -> (f x) :: (map f xs)
+IN
+map (FUN x -> x * 2)  (1::2::3::4::5::[])
